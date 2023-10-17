@@ -17,7 +17,7 @@ const authenticated = ref(false);
 const userPasswordInput = ref(null);
 const salamAzvejku = "em23";
 
-let showNewVersionModal = ref(true);
+const showNewVersionModal = ref(true);
 
 function closeNewVersionModal() {
   showNewVersionModal.value = false;
@@ -2178,7 +2178,7 @@ function overflowVisible() {
   <div id="app">
     <div v-if="authenticated">
       <div
-        v-show="showNewVersioModal"
+        v-show="showNewVersionModal"
         class="new-version-message-container modal-main-container"
       >
         <div class="modal-inner-container">
@@ -2186,22 +2186,64 @@ function overflowVisible() {
             Nová verze webové aplikace emTRUCK je na světě!
           </div>
           <ul class="new-version-ul">
-            <li>Zaregistrujte se pomocí libovolného existujícího e-mailu.</li>
-            <br />
             <li>
-              Potvrďte registraci kliknutím na odkaz který Vám přijde do vaší
-              e-mailové schránky.
+              zaregistrujte se pomocí
+              <span class="bold-more">libovolného</span> existujícího e-mailu
             </li>
             <br />
-            <li>A už se Vám nestane že by jste přišli o uložené práce!</li>
+            <li>
+              potvrďte registraci kliknutím na odkaz který Vám přijde do vaší
+              e-mailové schránky
+            </li>
+            <br />
+            <li>začněte ji používat</li>
+            <br />
           </ul>
-          <div class="modal-text">
+          <br />
+          <div class="new-version-message-sub-heading">
+            Výhody nové aplikace
+          </div>
+          <br />
+          <ul class="new-version-ul">
+            <li>
+              aktuální výplata v přehledu - vypočítaná dle Vámi nastavených
+              parametrů (% z fakturace, příplatky za druhé práce...)
+            </li>
+            <br />
+            <li>
+              při přidávání práce z ceníku lze upravit veškeré parametry včetně
+              názvu obce, psč, ceny atd...
+            </li>
+            <br />
+            <li>
+              možnost upravovat archivované práce + parametry pro výpočet
+              výplaty daného měsíce přímo v archivu
+            </li>
+            <br />
+            <li>
+              možnost kdykoliv nastavit vlastní kurz EUR/KČ (jinak je kurz
+              automaticky aktualizován po každe archivaci)
+            </li>
+            <br />
+            <li>
+              vámi přidané / archivované práce jsou uloženy v databázi - nestane
+              se tedy už to, že by se Vám bez zjevného důvodu smazaly
+            </li>
+            <br />
+          </ul>
+          <div class="modal-text new-version-text bold">
             Novou verzi aplikace najdete na adrese:<span
-              ><a class="modal-text" href="#">www.emTRUCK.net</a></span
+              ><a class="modal-text" href="https://www.emtruck.net"
+                >www.emTRUCK.net</a
+              ></span
             >
           </div>
           <div class="modal-text danger">
-            Tato stará verze aplikace bude k dispozici do 31.11.2023
+            Tato původní verze aplikace bude v provozu do Neděle 3.12.2023.
+          </div>
+          <div class="modal-text danger">
+            Nezapomeňte si poslat archivované měsíce na mail. Data poté již
+            nebudou dostupná!
           </div>
           <div class="modal-text">
             <button @click="closeNewVersionModal">Zavřít toto okno</button>
@@ -4234,16 +4276,39 @@ button.decline-red::before {
 
 .new-version-message-heading {
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.new-version-message-sub-heading {
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.new-version-text {
+  font-size: 0.85rem;
+  text-align: center;
 }
 
 .new-version-ul {
   margin-left: 2rem;
   list-style: disc;
+  font-size: 0.85rem;
+}
+
+.bold-more {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.bold {
+  font-weight: bold;
 }
 
 .danger {
   color: red;
+  font-weight: bolder;
 }
 
 /* ----------------------------------------  Part 0 - Navbar  -------------------- */
