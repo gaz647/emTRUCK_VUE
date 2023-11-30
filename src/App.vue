@@ -2186,10 +2186,7 @@ function overflowVisible() {
             Nová verze webové aplikace emTRUCK je na světě!
           </div>
           <ul class="new-version-ul">
-            <li>
-              zaregistrujte se pomocí
-              <span class="bold-more">libovolného</span> existujícího e-mailu
-            </li>
+            <li>zaregistrujte se pomocí libovolného existujícího e-mailu</li>
             <br />
             <li>
               potvrďte registraci kliknutím na odkaz který Vám přijde do vaší
@@ -2233,13 +2230,17 @@ function overflowVisible() {
           </ul>
           <div class="modal-text new-version-text bold">
             Novou verzi aplikace najdete na adrese:<span
-              ><a class="modal-text" href="https://www.emtruck.net"
+              ><a
+                class="modal-text"
+                href="https://www.emtruck.net"
+                target="_blank"
+                rel="noopener noreferrer"
                 >www.emTRUCK.net</a
               ></span
             >
           </div>
           <div class="modal-text danger">
-            Tato původní verze aplikace bude v provozu do Neděle 3.12.2023.
+            Tato původní verze aplikace bude v provozu do Neděle 17.12.2023.
           </div>
           <div class="modal-text danger">
             Nezapomeňte si poslat archivované měsíce na mail. Data poté již
